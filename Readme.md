@@ -39,7 +39,7 @@ A full-stack expense tracking application built with modern web technologies. Th
 
 1. **Clone the repository** (or create the files as per structure):
 ```bash
-git clone <repository-url>
+git clone git@github.com:VenomBlood1207/expense-tracker.git
 cd expense-tracker
 ```
 
