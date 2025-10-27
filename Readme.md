@@ -28,40 +28,6 @@ A full-stack expense tracking application built with modern web technologies. Th
 - **Containerization**: Docker + Docker Compose
 - **API Documentation**: Swagger UI / OpenAPI
 
-## 📁 Project Structure
-├── backend
-│   ├── app
-│   │   ├── main.py
-│   │   ├── models.py
-│   │   ├── routes
-│   │   │   ├── categories.py
-│   │   │   ├── expenses.py
-│   │   │   ├── income.py
-│   │   │   └── summary.py
-│   │   └── schemas.py
-│   ├── Dockerfile
-│   └── requirements.txt
-├── docker-compose.yml
-├── frontend
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── public
-│   │   ├── index.html
-│   │   ├── manifest.json
-│   │   └── robots.txt
-│   ├── src
-│   │   ├── App.jsx
-│   │   ├── components
-│   │   │   ├── CategoryForm.jsx
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── ExpenseForm.jsx
-│   │   │   └── IncomeForm.jsx
-│   │   ├── index.css
-│   │   ├── index.jsx
-│   │   └── utils
-│   │       └── app.js
-│   └── tailwind.config.js
-└── Readme.md
 
 ## 🐳 Quick Start
 
