@@ -1,22 +1,97 @@
-# Expense Tracker App
+# 💰 Expense Tracker App
 
-A full-stack expense tracker built with FastAPI, React, and PostgreSQL using Docker.
+A full-stack expense tracking application built with modern web technologies. This application helps users manage their monthly income, track expenses by category, and visualize their financial health through an intuitive dashboard.
 
-## 🛠 Setup
+## 🚀 Features
 
-1. Clone the repo
-2. Create `.env` file with:
-	POSTGRES_USER=expense_user
-	POSTGRES_PASSWORD=expense_pass
-	POSTGRES_DB=expense_db
-	DATABASE_URL=postgresql://expense_user:expense_pass@db:5432/expense_db
+### Core Functionality
+- **🎯 Monthly Income Management**: Set and update your monthly income
+- **📊 Expense Tracking**: Add expenses with amount, description, and category
+- **🏷️ Custom Categories**: Create and manage custom expense categories
+- **📈 Real-time Dashboard**: View total income, expenses, and remaining balance
+- **🥧 Category Breakdown**: Visual representation of spending by category
+- **💾 Data Persistence**: All data stored in PostgreSQL database
+- **📱 Responsive Design**: Works on desktop, tablet, and mobile devices
+
+### Technical Features
+- **🐋 Fully Dockerized**: Backend, frontend, and database in separate containers
+- **🔗 RESTful API**: Clean and well-documented API endpoints
+- **🛡️ CORS Support**: Secure cross-origin resource sharing
+- **🎨 Modern UI**: Built with React and Tailwind CSS
+- **⚙️ Environment Configuration**: Secure environment variable management
+
+## 🛠 Technology Stack
+
+- **Frontend**: React 18 + Tailwind CSS
+- **Backend**: FastAPI (Python 3.12) + SQLAlchemy
+- **Database**: PostgreSQL 15
+- **Containerization**: Docker + Docker Compose
+- **API Documentation**: Swagger UI / OpenAPI
+
+## 📁 Project Structure
+├── backend
+│   ├── app
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   ├── routes
+│   │   │   ├── categories.py
+│   │   │   ├── expenses.py
+│   │   │   ├── income.py
+│   │   │   └── summary.py
+│   │   └── schemas.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── docker-compose.yml
+├── frontend
+│   ├── Dockerfile
+│   ├── package.json
+│   ├── public
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── src
+│   │   ├── App.jsx
+│   │   ├── components
+│   │   │   ├── CategoryForm.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── ExpenseForm.jsx
+│   │   │   └── IncomeForm.jsx
+│   │   ├── index.css
+│   │   ├── index.jsx
+│   │   └── utils
+│   │       └── app.js
+│   └── tailwind.config.js
+└── Readme.md
+
+## 🐳 Quick Start
+
+### Prerequisites
+- Docker and Docker Compose installed
+- Git (optional, for cloning)
+
+### Installation
+
+1. **Clone the repository** (or create the files as per structure):
+```bash
+git clone <repository-url>
+cd expense-tracker
+```
+
+2. **Create a `.env` file** with the following variables:
+```bash
+POSTGRES_USER=expense_user
+POSTGRES_PASSWORD=expense_pass
+POSTGRES_DB=expense_db
+DATABASE_URL=postgresql://expense_user:expense_pass@db:5432/expense_db
+```
 
 
-## 🐳 Run the App
+## 🐳 Build and start containers
 
 ```bash
-docker-compose build
-docker-compose up
+sudo docker compose up --build 	#For the first time
+sudo docker compose up 			#For subsequent runs
+```
 
 
 🌐 Access
