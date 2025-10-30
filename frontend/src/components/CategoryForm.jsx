@@ -20,9 +20,9 @@ export default function CategoryForm() {
       await api.post("/categories/", { name });
       setName("");
       fetchCategories();
-      alert("Category created!");
+      alert("Category created successfully!");
     } catch (error) {
-      alert("Error creating category");
+      alert("Error creating category: " + error.message);
     }
   };
 
@@ -31,33 +31,42 @@ export default function CategoryForm() {
   }, []);
 
   return (
-    <div className="mb-6 p-4 border rounded">
-      <h2 className="text-xl font-semibold mb-2">Add Category</h2>
+    <div className="mb-6 p-4 border rounded bg-white">
+      <h2 className="text-xl font-semibold mb-4">🏷️ Add Category</h2>
       <form onSubmit={handleSubmit} className="mb-4">
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Category name"
-          className="border p-2 mr-2"
-          required
-        />
-        <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded">
-          Add Category
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Category name"
+            className="flex-1 border p-3 rounded focus:ring-2 focus:ring-green-500 focus:outline-none"
+            required
+          />
+          <button 
+            type="submit" 
+            className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded font-medium transition"
+          >
+            Add Category
+          </button>
+        </div>
       </form>
       
       <div>
         <h3 className="font-medium mb-2">Existing Categories:</h3>
         <div className="flex flex-wrap gap-2">
-          {categories.map((cat) => (
-            <span 
-              key={cat.id} 
-              className="bg-gray-200 px-3 py-1 rounded-full text-sm"
-            >
-              {cat.name}
-            </span>
-          ))}
+          {categories.length > 0 ? (
+            categories.map((cat) => (
+              <span 
+                key={cat.id} 
+                className="bg-gray-200 px-3 py-1 rounded-full text-sm"
+              >
+                {cat.name}
+              </span>
+            ))
+          ) : (
+            <p className="text-gray-500 italic">No categories created yet</p>
+          )}
         </div>
       </div>
     </div>
